@@ -1,0 +1,69 @@
+---
+title: "Analysis on ToothGrowth Data"
+author: "Yanhui Zhou"
+date: "October 23, 2015"
+output: pdf_document
+---
+# Overview
+This is the second portion of the statistical inference class' course project of Coursera, we're going to do basic inferential data analysis on the ToothGrowth data in the R datasets package.
+
+## Data Background
+The ToothGrowth data is the length of odontoblasts (teeth) in each of 10 guinea pigs at each of three dose levels of Vitamin C (0.5, 1, and 2 mg) with each of two delivery methods (orange juice or ascorbic acid).  
+
+# Load the ToothGrowth data and exploratory data
+Load the ToothGrowth data and show basic summary
+```{r}
+library(datasets)
+data("ToothGrowth")
+summary(ToothGrowth)
+```  
+Plot a figure to show the feature of the data  
+```{r}
+library(ggplot2)
+g <- ggplot(data=ToothGrowth, aes(dose, len, group = supp))
+g <- g + facet_grid(facets = .~supp)
+g <- g + geom_point(aes(colour = dose))
+g <- g + geom_smooth(stat = "smooth", method = "loess")
+suppressWarnings(print(g))
+```
+
+# analyze intervals
+Below, use one side confidence intervals and/or hypothesis tests to compare tooth growth by supp and dose.  
+**T test on different supp, Supplement type (VC or OJ)**    
+null hypothesis: mean of supplement with "VC" >= mean of supplement with "OJ"  
+alternative hypothesis: mean of supplement with "VC" < mean of supplement with "OJ"
+```{r}
+t.test(ToothGrowth$len[ToothGrowth$supp == 'VC'], ToothGrowth$len[ToothGrowth$supp == 'OJ'], 
+    var.equal = FALSE, paired = FALSE, alternative="less")
+```  
+*Result: p-value < 0.05*  
+**T test on different Dose(milligrams)**  
+1. 0.5 vs. 1.0  
+null hypothesis: mean of dose with 0.5 milligrams >= mean of dose with 1.0 milligrams  
+alternative hypothesis: mean of dose with 0.5 milligrams < mean of dose with 1.0 milligrams
+```{r}
+t.test(ToothGrowth$len[ToothGrowth$dos == 0.5], ToothGrowth$len[ToothGrowth$dos == 1.0], 
+    var.equal = FALSE, paired = FALSE, alternative="less")
+```     
+*Result: p-value < 0.05*
+
+2. 1.0 vs. 2.0  
+null hypothesis: mean of dose with 1.0 milligrams >= mean of dose with 2.0 milligrams  
+alternative hypothesis: mean of dose with 1.0 milligrams < mean of dose with 2.0 milligrams
+```{r}
+t.test(ToothGrowth$len[ToothGrowth$dos == 1.0], ToothGrowth$len[ToothGrowth$dos == 2.0], 
+    var.equal = FALSE, paired = FALSE, alternative="less")
+```     
+*Result: p-value < 0.05*
+
+# Conclusion
+* Assumptions
+    1. Suppose the guinea pigs are chose randomly.
+    2. The each group of 10 guinea pigs is independent.
+    3. Assume a different variance per group.
+    
+* Conclusion
+According to the T test result of null hypothesis and alternative hypothesis, we konw:
+    1. Supplement with VC is not better to length of teeth than OJ. So, orange juice(OJ) is more effective.
+    2. Vitamin is effective to teeth, as dose increase, length of teeth will be longer.
+

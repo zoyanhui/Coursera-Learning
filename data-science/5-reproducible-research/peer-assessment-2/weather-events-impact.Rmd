@@ -1,0 +1,145 @@
+---
+title: "The Largest Impact Weather Events on Health and Economic Across the United States"
+author: "zhouyanhui"
+date: "October 18, 2015"
+output: html_document
+---
+
+# Synopsis
+The basic goal of this analysis is to explore the NOAA Storm Database and the questions below about severe weather events.
+
+1. Across the United States, which types of events are most harmful with respect to population health?
+
+2. Across the United States, which types of events have the greatest economic consequences?
+
+After analysis, the result shows, from 1950 to November 2011:
+
+* tornados are the most harmful with respect to population health, which have led to 5633 fatalities and 91346 injuries.
+
+* floods are the greatest economic consequences, which have caused over 150 billion dollars economic damange.
+
+# Data Processing
+## Read and check the data 
+Read data from raw data file
+```{r, cache=TRUE}
+weatherdata <- read.csv(bzfile("repdata-data-StormData.csv.bz2"))
+```
+
+Check data rows and colums
+```{r}
+dim(weatherdata)
+names(weatherdata)
+```
+
+## Process data
+In this analysis, need to use this variables:
+'EVTYPE','FATALITIES','INJURIES', 'PROPDMG', 'PROPDMGEXP', 'CROPDMG', 'CROPDMGEXP'.
+
+**Filter useful data from original storm data.**
+
+```{r}
+eeData <- weatherdata[,c('EVTYPE','FATALITIES','INJURIES', 'PROPDMG', 'PROPDMGEXP', 'CROPDMG', 'CROPDMGEXP')]
+```
+
+**Check variables**
+```{r}
+head(eeData)
+```
+
+```{r}
+type_num <- length(unique(eeData$EVTYPE))
+```
+There is `r type_num` of event types.
+
+```{r}
+str(unique(eeData$FATALITIES))
+str(unique(eeData$INJURIES))
+```
+
+The value of FATALITIES and INJURIES are numbers.
+
+```{r}
+str(unique(eeData$PROPDMG))
+str(unique(eeData$CROPDMG))
+```
+The value of PROPDMG and CROPDMG are both numeric.
+
+```{r}
+str(unique(eeData$PROPDMGEXP))
+str(unique(eeData$CROPDMGEXP))
+```
+
+The value of PROPDMGEXP and CROPDMGEXP are unit of PROPDMG and CROPDMG respectively. According to the document, "H" for hundreds,  "K" for thousands, "M" for millions, and "B" for billions, and others not mentioned will be ignored.
+
+**Process the data, about harmful with respect to population health**
+Sum FATALITIES and INJURIES for each EVTYPE respectively, and merge to one dataset.
+```{r}
+suppressMessages(library(dplyr))
+fatalitiesData <- aggregate(FATALITIES ~ EVTYPE, data=eeData, sum)
+injuriesData <- aggregate(INJURIES ~ EVTYPE, data=eeData, sum)
+healthHarmData <- merge(fatalitiesData, injuriesData, by="EVTYPE")
+healthHarmData <- arrange(healthHarmData, -FATALITIES, -INJURIES)
+```
+
+**Process the data, about economic consequences**
+Convert numeric of damage value with unit to dollar number.
+And then sum the property damage and crop damage for each EVTYPE.
+```{r}
+eeData$propDmgAmout <- 0
+idx <- toupper(eeData$PROPDMGEXP) == 'H'
+eeData$propDmgAmout[idx] <- eeData$PROPDMG[idx] * 100
+idx <- toupper(eeData$PROPDMGEXP) == 'K'
+eeData$propDmgAmout[idx] <- eeData$PROPDMG[idx] * 1000
+idx <- toupper(eeData$PROPDMGEXP) == 'M'
+eeData$propDmgAmout[idx] <- eeData$PROPDMG[idx] * 10^6
+idx <- toupper(eeData$PROPDMGEXP) == 'B'
+eeData$propDmgAmout[idx] <- eeData$PROPDMG[idx] * 10^9
+
+eeData$cropDmgAmout <- 0
+idx <- toupper(eeData$CROPDMGEXP) == 'H'
+eeData$cropDmgAmout[idx] <- eeData$CROPDMG[idx] * 100
+idx <- toupper(eeData$CROPDMGEXP) == 'K'
+eeData$cropDmgAmout[idx] <- eeData$CROPDMG[idx] * 1000
+idx <- toupper(eeData$CROPDMGEXP) == 'M'
+eeData$cropDmgAmout[idx] <- eeData$CROPDMG[idx] * 10^6
+idx <- toupper(eeData$CROPDMGEXP) == 'B'
+eeData$cropDmgAmout[idx] <- eeData$CROPDMG[idx] * 10^9
+
+economicDmg <- aggregate(propDmgAmout + cropDmgAmout ~ EVTYPE, data=eeData, sum)
+names(economicDmg) <- c("EVTYPE", "economicDmg")
+economicDmg <- arrange(economicDmg, -economicDmg)
+```
+
+# Results
+## The most harmful event with respect to population health
+Show FATALITIES and INJURIES with the top 9 harmful weather events in one figure.
+```{r}
+suppressMessages(library(reshape2))
+suppressMessages(library(ggplot2))
+df <- healthHarmData[1:9, ]
+dfm <- melt(df, id.vars = 'EVTYPE', variable.name = 'Impacts.to.human.health')
+p <- ggplot(dfm, aes(x = EVTYPE, y = value, group =Impacts.to.human.health))
+p <- p+ geom_line(aes(colour=Impacts.to.human.health)) 
+p <- p+ theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
+p <- p + xlab("Event Type") + ylab("Number of individuals") + ggtitle("The 9 Largest Impact Event With Respect to Population Health")
+print(p)
+```
+
+This figure shows the most fatalities and injuries are both caused by `r healthHarmData[1,"EVTYPE"]`.
+
+So, **The most harmful event with respect to population health is `r healthHarmData[1,"EVTYPE"]`**, it cause `r healthHarmData[1,"FATALITIES"]` fatalities and `r format(healthHarmData[1,"INJURIES"])` injuries.
+
+## The greatest economic consequences event
+Show the top 9 great economic consequences in a figure.
+```{r}
+df <- economicDmg[1:9, ]
+p <- ggplot(df, aes(x=EVTYPE, y=economicDmg))
+p <- p + geom_bar(fill = "blue", stat = "identity") 
+p <- p + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+p <- p + xlab("Event Type") + ylab("Economic damage") + ggtitle("The 9 Largest Damage Event on Property and Crop")
+print(p)
+```
+
+This figure shows the `r economicDmg[1,"EVTYPE"]` event has the highest bar.
+
+So, **The greatest economic consequences event is `r economicDmg[1,"EVTYPE"]`**, the economic damage is up to `r format(economicDmg[1,"economicDmg"])` dollars.
