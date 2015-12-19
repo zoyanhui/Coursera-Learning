@@ -1,0 +1,5 @@
+https://cwiki.apache.org/confluence/display/Hive/LanguageManual
+http://hbase.apache.org/book.html#arch.overview
+http://pig.apache.org/docs/r0.15.0/start.html
+http://pig.apache.org/docs/r0.15.0/basic.html
+
