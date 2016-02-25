@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<config key="columnType_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="columnType" type="xstring" value="MULTI_STRING"/>
+<config key="multiStringColumnPatter_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="multiStringColumnPatter" type="xstring" value="t"/>
+<config key="multiStringColumnHasWildcards_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="multiStringColumnHasWildcards" type="xboolean" value="false"/>
+<config key="multiStringColumnCaseSensitive_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="multiStringColumnCaseSensitive" type="xboolean" value="false"/>
+<config key="multiStringColumnIsRegex_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="multiStringColumnIsRegex" type="xboolean" value="false"/>
+<config key="multiStringColumnSetMatching_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="multiStringColumnSetMatching" type="xstring" value="MATCHING"/>
+<config key="multiColumnNames">
+<entry key="filter-type" type="xstring" value="STANDARD"/>
+<config key="included_names">
+<entry key="array-size" type="xint" value="105"/>
+<entry key="0" type="xstring" value="grocery misc"/>
+<entry key="1" type="xstring" value="baby needs"/>
+<entry key="2" type="xstring" value="bread and cake"/>
+<entry key="3" type="xstring" value="baking needs"/>
+<entry key="4" type="xstring" value="coupons"/>
+<entry key="5" type="xstring" value="juice-sat-cord-ms"/>
+<entry key="6" type="xstring" value="tea"/>
+<entry key="7" type="xstring" value="biscuits"/>
+<entry key="8" type="xstring" value="canned fish-meat"/>
+<entry key="9" type="xstring" value="canned fruit"/>
+<entry key="10" type="xstring" value="canned vegetables"/>
+<entry key="11" type="xstring" value="breakfast food"/>
+<entry key="12" type="xstring" value="cigs-tobacco pkts"/>
+<entry key="13" type="xstring" value="cigarette cartons"/>
+<entry key="14" type="xstring" value="cleaners-polishers"/>
+<entry key="15" type="xstring" value="coffee"/>
+<entry key="16" type="xstring" value="sauces-gravy-pkle"/>
+<entry key="17" type="xstring" value="confectionary"/>
+<entry key="18" type="xstring" value="puddings-deserts"/>
+<entry key="19" type="xstring" value="dishcloths-scour"/>
+<entry key="20" type="xstring" value="deod-disinfectant"/>
+<entry key="21" type="xstring" value="frozen foods"/>
+<entry key="22" type="xstring" value="razor blades"/>
+<entry key="23" type="xstring" value="fuels-garden aids"/>
+<entry key="24" type="xstring" value="spices"/>
+<entry key="25" type="xstring" value="jams-spreads"/>
+<entry key="26" type="xstring" value="insecticides"/>
+<entry key="27" type="xstring" value="pet foods"/>
+<entry key="28" type="xstring" value="laundry needs"/>
+<entry key="29" type="xstring" value="party snack foods"/>
+<entry key="30" type="xstring" value="tissues-paper prd"/>
+<entry key="31" type="xstring" value="wrapping"/>
+<entry key="32" type="xstring" value="dried vegetables"/>
+<entry key="33" type="xstring" value="pkt-canned soup"/>
+<entry key="34" type="xstring" value="soft drinks"/>
+<entry key="35" type="xstring" value="health food other"/>
+<entry key="36" type="xstring" value="beverages hot"/>
+<entry key="37" type="xstring" value="health&amp;beauty misc"/>
+<entry key="38" type="xstring" value="deodorants-soap"/>
+<entry key="39" type="xstring" value="mens toiletries"/>
+<entry key="40" type="xstring" value="medicines"/>
+<entry key="41" type="xstring" value="haircare"/>
+<entry key="42" type="xstring" value="dental needs"/>
+<entry key="43" type="xstring" value="lotions-creams"/>
+<entry key="44" type="xstring" value="sanitary pads"/>
+<entry key="45" type="xstring" value="cough-cold-pain"/>
+<entry key="46" type="xstring" value="meat misc"/>
+<entry key="47" type="xstring" value="cheese"/>
+<entry key="48" type="xstring" value="chickens"/>
+<entry key="49" type="xstring" value="milk-cream"/>
+<entry key="50" type="xstring" value="cold-meats"/>
+<entry key="51" type="xstring" value="deli gourmet"/>
+<entry key="52" type="xstring" value="margarine"/>
+<entry key="53" type="xstring" value="salads"/>
+<entry key="54" type="xstring" value="small goods"/>
+<entry key="55" type="xstring" value="dairy foods"/>
+<entry key="56" type="xstring" value="fruit drinks"/>
+<entry key="57" type="xstring" value="delicatessen misc"/>
+<entry key="58" type="xstring" value="beef"/>
+<entry key="59" type="xstring" value="hogget"/>
+<entry key="60" type="xstring" value="lamb"/>
+<entry key="61" type="xstring" value="pet food"/>
+<entry key="62" type="xstring" value="pork"/>
+<entry key="63" type="xstring" value="poultry"/>
+<entry key="64" type="xstring" value="veal"/>
+<entry key="65" type="xstring" value="gourmet meat"/>
+<entry key="66" type="xstring" value="produce misc"/>
+<entry key="67" type="xstring" value="fruit"/>
+<entry key="68" type="xstring" value="plants"/>
+<entry key="69" type="xstring" value="potatoes"/>
+<entry key="70" type="xstring" value="vegetables"/>
+<entry key="71" type="xstring" value="flowers"/>
+<entry key="72" type="xstring" value="variety misc"/>
+<entry key="73" type="xstring" value="brushware"/>
+<entry key="74" type="xstring" value="electrical"/>
+<entry key="75" type="xstring" value="haberdashery"/>
+<entry key="76" type="xstring" value="kitchen"/>
+<entry key="77" type="xstring" value="manchester"/>
+<entry key="78" type="xstring" value="pantyhose"/>
+<entry key="79" type="xstring" value="plasticware"/>
+<entry key="80" type="xstring" value="stationary"/>
+<entry key="81" type="xstring" value="prepared meals"/>
+<entry key="82" type="xstring" value="preserving needs"/>
+<entry key="83" type="xstring" value="condiments"/>
+<entry key="84" type="xstring" value="cooking oils"/>
+<entry key="85" type="xstring" value="health food bulk"/>
+<entry key="86" type="xstring" value="bake off products"/>
+<entry key="87" type="xstring" value="small goods2"/>
+<entry key="88" type="xstring" value="offal"/>
+<entry key="89" type="xstring" value="mutton"/>
+<entry key="90" type="xstring" value="trim pork"/>
+<entry key="91" type="xstring" value="trim lamb"/>
+<entry key="92" type="xstring" value="imported cheese"/>
+<entry key="93" type="xstring" value="casks white wine"/>
+<entry key="94" type="xstring" value="casks red wine"/>
+<entry key="95" type="xstring" value="750ml white nz"/>
+<entry key="96" type="xstring" value="750ml red nz"/>
+<entry key="97" type="xstring" value="750ml white imp"/>
+<entry key="98" type="xstring" value="750ml red imp"/>
+<entry key="99" type="xstring" value="sparkling nz"/>
+<entry key="100" type="xstring" value="sparkling imp"/>
+<entry key="101" type="xstring" value="brew kits/accesry"/>
+<entry key="102" type="xstring" value="port and sherry"/>
+<entry key="103" type="xstring" value="ctrled label wine"/>
+<entry key="104" type="xstring" value="non host support"/>
+</config>
+<config key="excluded_names">
+<entry key="array-size" type="xint" value="112"/>
+<entry key="0" type="xstring" value="department1"/>
+<entry key="1" type="xstring" value="department2"/>
+<entry key="2" type="xstring" value="department3"/>
+<entry key="3" type="xstring" value="department4"/>
+<entry key="4" type="xstring" value="department5"/>
+<entry key="5" type="xstring" value="department6"/>
+<entry key="6" type="xstring" value="department7"/>
+<entry key="7" type="xstring" value="department8"/>
+<entry key="8" type="xstring" value="department9"/>
+<entry key="9" type="xstring" value="department11"/>
+<entry key="10" type="xstring" value="department57"/>
+<entry key="11" type="xstring" value="department70"/>
+<entry key="12" type="xstring" value="department79"/>
+<entry key="13" type="xstring" value="department80"/>
+<entry key="14" type="xstring" value="department81"/>
+<entry key="15" type="xstring" value="department88"/>
+<entry key="16" type="xstring" value="department89"/>
+<entry key="17" type="xstring" value="department98"/>
+<entry key="18" type="xstring" value="department100"/>
+<entry key="19" type="xstring" value="department101"/>
+<entry key="20" type="xstring" value="department102"/>
+<entry key="21" type="xstring" value="department107"/>
+<entry key="22" type="xstring" value="department108"/>
+<entry key="23" type="xstring" value="department109"/>
+<entry key="24" type="xstring" value="department110"/>
+<entry key="25" type="xstring" value="department111"/>
+<entry key="26" type="xstring" value="department112"/>
+<entry key="27" type="xstring" value="department113"/>
+<entry key="28" type="xstring" value="department114"/>
+<entry key="29" type="xstring" value="department116"/>
+<entry key="30" type="xstring" value="department117"/>
+<entry key="31" type="xstring" value="department118"/>
+<entry key="32" type="xstring" value="department119"/>
+<entry key="33" type="xstring" value="department120"/>
+<entry key="34" type="xstring" value="department122"/>
+<entry key="35" type="xstring" value="department123"/>
+<entry key="36" type="xstring" value="department124"/>
+<entry key="37" type="xstring" value="department125"/>
+<entry key="38" type="xstring" value="department126"/>
+<entry key="39" type="xstring" value="department127"/>
+<entry key="40" type="xstring" value="department128"/>
+<entry key="41" type="xstring" value="department129"/>
+<entry key="42" type="xstring" value="department130"/>
+<entry key="43" type="xstring" value="department137"/>
+<entry key="44" type="xstring" value="department138"/>
+<entry key="45" type="xstring" value="department139"/>
+<entry key="46" type="xstring" value="department140"/>
+<entry key="47" type="xstring" value="department141"/>
+<entry key="48" type="xstring" value="department142"/>
+<entry key="49" type="xstring" value="department143"/>
+<entry key="50" type="xstring" value="department144"/>
+<entry key="51" type="xstring" value="department145"/>
+<entry key="52" type="xstring" value="department146"/>
+<entry key="53" type="xstring" value="department147"/>
+<entry key="54" type="xstring" value="department148"/>
+<entry key="55" type="xstring" value="department149"/>
+<entry key="56" type="xstring" value="department150"/>
+<entry key="57" type="xstring" value="department151"/>
+<entry key="58" type="xstring" value="department152"/>
+<entry key="59" type="xstring" value="department153"/>
+<entry key="60" type="xstring" value="department154"/>
+<entry key="61" type="xstring" value="department155"/>
+<entry key="62" type="xstring" value="department156"/>
+<entry key="63" type="xstring" value="department157"/>
+<entry key="64" type="xstring" value="department158"/>
+<entry key="65" type="xstring" value="department159"/>
+<entry key="66" type="xstring" value="department160"/>
+<entry key="67" type="xstring" value="department161"/>
+<entry key="68" type="xstring" value="department162"/>
+<entry key="69" type="xstring" value="department163"/>
+<entry key="70" type="xstring" value="department164"/>
+<entry key="71" type="xstring" value="department165"/>
+<entry key="72" type="xstring" value="department166"/>
+<entry key="73" type="xstring" value="department167"/>
+<entry key="74" type="xstring" value="department168"/>
+<entry key="75" type="xstring" value="department169"/>
+<entry key="76" type="xstring" value="department170"/>
+<entry key="77" type="xstring" value="department171"/>
+<entry key="78" type="xstring" value="department172"/>
+<entry key="79" type="xstring" value="department173"/>
+<entry key="80" type="xstring" value="department174"/>
+<entry key="81" type="xstring" value="department175"/>
+<entry key="82" type="xstring" value="department176"/>
+<entry key="83" type="xstring" value="department177"/>
+<entry key="84" type="xstring" value="department178"/>
+<entry key="85" type="xstring" value="department179"/>
+<entry key="86" type="xstring" value="department189"/>
+<entry key="87" type="xstring" value="department192"/>
+<entry key="88" type="xstring" value="department193"/>
+<entry key="89" type="xstring" value="department194"/>
+<entry key="90" type="xstring" value="department195"/>
+<entry key="91" type="xstring" value="department196"/>
+<entry key="92" type="xstring" value="department197"/>
+<entry key="93" type="xstring" value="department198"/>
+<entry key="94" type="xstring" value="department199"/>
+<entry key="95" type="xstring" value="department201"/>
+<entry key="96" type="xstring" value="department202"/>
+<entry key="97" type="xstring" value="department203"/>
+<entry key="98" type="xstring" value="department204"/>
+<entry key="99" type="xstring" value="department205"/>
+<entry key="100" type="xstring" value="department206"/>
+<entry key="101" type="xstring" value="department207"/>
+<entry key="102" type="xstring" value="department208"/>
+<entry key="103" type="xstring" value="department209"/>
+<entry key="104" type="xstring" value="department210"/>
+<entry key="105" type="xstring" value="department211"/>
+<entry key="106" type="xstring" value="department212"/>
+<entry key="107" type="xstring" value="department213"/>
+<entry key="108" type="xstring" value="department214"/>
+<entry key="109" type="xstring" value="department215"/>
+<entry key="110" type="xstring" value="department216"/>
+<entry key="111" type="xstring" value="total"/>
+</config>
+<entry key="enforce_option" type="xstring" value="EnforceExclusion"/>
+<config key="name_pattern">
+<entry key="pattern" type="xstring" value=""/>
+<entry key="type" type="xstring" value="Wildcard"/>
+<entry key="caseSensitive" type="xboolean" value="true"/>
+</config>
+<config key="datatype">
+<config key="typelist">
+<entry key="org.knime.core.data.BooleanValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.date.DateAndTimeValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.DoubleValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.IntValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.LongValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.StringValue" type="xboolean" value="false"/>
+</config>
+</config>
+</config>
+<config key="singleNumericThreshold_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_double"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="singleNumericThreshold" type="xdouble" value="1.0"/>
+<config key="singleNumericUseMean_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="singleNumericUseMean" type="xboolean" value="false"/>
+<config key="singleNumericMeanThreshold_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="singleNumericMeanThreshold" type="xint" value="100"/>
+<config key="singleColumnName_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="singleColumnName" type="xstring" isnull="true" value=""/>
+<config key="singleStringType_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="singleStringType" type="xstring" value="HEX"/>
+<config key="removeInputColumns_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="removeInputColumns" type="xboolean" value="true"/>
+<config key="outputColumnName_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="outputColumnName" type="xstring" value="BitVector"/>
+<config key="failOnParseError_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="failOnParseError" type="xboolean" value="false"/>
+<config key="vectorType_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="vectorType" type="xstring" value="SPARSE"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="EXECUTED"/>
+<entry key="factory" type="xstring" value="org.knime.base.node.preproc.bitvector.create.CreateBitVectorNodeFactory"/>
+<entry key="node-name" type="xstring" value="Create Bit Vector"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.base"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-bundle-version" type="xstring" value="3.1.0.v201512020906"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Core"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.base.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-feature-version" type="xstring" value="3.1.0.v201512031304"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="Create Bit Vector"/>
+<entry key="hasContent" type="xboolean" value="true"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports">
+<config key="port_1">
+<entry key="index" type="xint" value="1"/>
+<entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+<entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 4627, Cols: 113"/>
+<entry key="port_dir_location" type="xstring" value="port_1"/>
+</config>
+</config>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" value="678e58b5-c6bb-4b9f-b627-d04ceaa17f92"/>
+</config>
+</config>
