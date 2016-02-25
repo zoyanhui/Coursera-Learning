@@ -1,0 +1,34 @@
+---
+title: "Shiny Application Peer Assesment Projects Developing Data Products on Coursera"
+author: "zhouyanhui"
+date: "December 26, 2015"
+output: html_document
+---
+
+# This Shiny Application
+
+Write a shiny application with associated supporting documentation. The documentation should be thought of as whatever a user will need to get started using your application.
+Deploy the application on Rstudio's shiny server
+Share the application link by pasting it into the text box below
+Share your server.R and ui.R code on github
+The application must include the following:
+
+Some form of input (widget: textbox, radio button, checkbox, ...)
+Some operation on the ui input in sever.R
+Some reactive output displayed as a result of server calculations
+You must also include enough documentation so that a novice user could use your application.
+The documentation should be at the Shiny website itself. Do not post to an external link.
+
+# Data 
+This analysis predict miles/gallon of cars, based mtcars data of library datasets.
+Use a linear model to fit the mtcars data, and predict the mpg by the linear model.
+
+# Use
+The instruction of using this application follow the steps below:
+1. In the application page, select the number of cylinders, 4 is selected by default
+2. Enter the horsepower which is a integer number
+3. Select the transmission, the automatic is selected by default
+4. Enter the weight(lb).
+5. Click the "predict" button, then get the predict answer
+
+

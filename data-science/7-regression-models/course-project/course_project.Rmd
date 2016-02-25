@@ -1,0 +1,64 @@
+---
+title: "Regression Models Course Project"
+author: "zhouyanhui"
+date: "November 19, 2015"
+output: pdf_document
+---
+# Executive Summary  
+This analysis is to explore the mtcars data, and try to answer the following two questions:Is an automatic or manual transmission better for MPG? Quantify the MPG difference between automatic and manual transmissions?  
+After linear regression analysis, there is a difference between automatic and manual transmission. Manual transmission is better than automatic for MPG. It increases 1.8 MPG swithing from automatic transmission to manual transmission with others not changed.  
+
+# Read Data and Preprocess
+```{r}
+library(datasets)
+data("mtcars")
+mtcars$cyl <- factor(mtcars$cyl)
+mtcars$vs <- factor(mtcars$vs)
+mtcars$am <- factor(mtcars$am, labels = c("automatic", "manual"))
+mtcars$gear <- factor(mtcars$gear)
+mtcars$carb <- factor(mtcars$carb)
+```  
+# Exploratory Data  
+Make a boxplot to show the relation between mpg and am(Transmission), appendix figure 1. 
+According to figure 1, mpg of automatic is less than mpg of manual.   
+
+# Regression Model and Model Selection  
+Use step function to select the best linear regression model  
+```{r}
+model <- lm(mpg ~ ., data = mtcars)
+bestModel <- step(model, trace=FALSE)
+summary(bestModel)
+```  
+Compare the selected model with the base model and full Model.
+```{r}
+baseModel <- lm(mpg ~ am, data = mtcars)
+fullModel <- lm(mpg ~., data = mtcars)
+anova(baseModel, bestModel)$P
+anova(bestModel, fullModel)$P
+```  
+According to the p-value, the bestModel has the most necessary variance to explain outcome. The R-square of bestModel is `r summary(bestModel)$r.square`, that means it can explain `r summary(bestModel)$r.square * 100`% of the origin variance, so the bestModel is significant.
+
+# Residual Analysis  
+From Appendix Figure 2. The "Residuals vs Fitted" shows residuals are randomly scattered with no obvious pattern. In "Normal Q-Q", the theoretical quantiles and standardized residuals are almost in a line.
+
+# Conclusion  
+1. Comparing to automatic transmission, manual transmission has about 1.8 more miles per gallon.
+2. MPG will decrease by about 2.5 for increasing every 1000 lb weight.
+3. From 4 cylinders to 6 and 8 cylinders, MPG will decrease about 3.0 and 2.2.
+4. Increasing 1 gross horsepower, MPG will only deacrease 0.032.
+
+# Appendix
+## Figure 1:  
+```{r, echo=FALSE}
+suppressMessages(library(ggplot2))
+g <- ggplot(mtcars, aes(am, mpg, color = am))
+g <- g + geom_point() + geom_boxplot() 
+g <- g + labs(title="Miles per gallon with Different Transmission", x='Transmission', y = 'mpg')
+print(g)
+```  
+
+## Figure 2:
+```{r, echo=FALSE}
+par(mfrow=c(2, 2))
+plot(bestModel)
+```
